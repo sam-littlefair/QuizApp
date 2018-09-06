@@ -1,10 +1,7 @@
 import time
 import requests
 import sys
-from urllib.request import Request, urlopen
-from bs4 import BeautifulSoup
-from bs4.element import Comment
-import webbrowser
+
 from colorama import init, Fore, Back, Style
 init()
 

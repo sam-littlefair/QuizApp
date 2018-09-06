@@ -7,14 +7,12 @@ from google.cloud import vision
 from google.cloud.vision import types
 from PIL import Image, ImageDraw
 
-
 class FeatureType(Enum):
 	PAGE = 1
 	BLOCK = 2
 	PARA = 3
 	WORD = 4
 	SYMBOL = 5
-
 
 def draw_boxes(image, bounds, color):
 	draw = ImageDraw.Draw(image)
@@ -26,7 +24,6 @@ def draw_boxes(image, bounds, color):
 			bound.vertices[2].x, bound.vertices[2].y,
 			bound.vertices[3].x, bound.vertices[3].y], None, color)
 	return image
-
 
 def get_document_bounds(image_file, feature):
 	client = vision.ImageAnnotatorClient()
