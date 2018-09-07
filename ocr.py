@@ -64,8 +64,6 @@ def get_document_bounds(image_file, feature):
 
 
 def render_doc_text(filein, fileout):
-	image = Image.open(filein)
-
 	client = vision.ImageAnnotatorClient()
 
 	with io.open(filein, 'rb') as filein:
@@ -74,7 +72,6 @@ def render_doc_text(filein, fileout):
 	image2 = types.Image(content=content)
 
 	response = client.document_text_detection(image=image2)
-	document = response.full_text_annotation
 	answers = ["", "", "", ""]
 	qFound = -1
 	for page in response.full_text_annotation.pages:

@@ -2,7 +2,7 @@ import time
 import requests
 import sys
 
-from colorama import init, Fore, Back, Style
+from colorama import init, Fore, Style
 init()
 
 answer = ["","",""]
@@ -36,23 +36,23 @@ for loop in range(0, 3):
 		for x in range(0, 3):
 			word = answer[x].lower()
 			count[x] += result.count(word)
-			
+
 		if loop is 2:
-			max = 0
-			min = 1000000000000000
+			maximum = 0
+			minimum = 1000000000000000
 			ans = 0
 			if isnot is 0:
 				for x in range(0, 3):
 					check = count[x]
-					if max < check:
-						max = check
+					if maximum < check:
+						maximum = check
 						ans = x
 
 			elif isnot is 1:
 				for x in range(0, 3):
 					check = count[x]
-					if min > check:
-						min = check
+					if minimum > check:
+						minimum = check
 						ans = x	
 
 			if count[0] is 0 and count[1] is 0 and count[2] is 0:
